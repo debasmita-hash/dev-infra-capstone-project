@@ -39,21 +39,3 @@ The projects demonstrate practical experience with AWS, Terraform, GitHub Action
 | Project 23 | IAM role access | AWS IAM, trust policies |
 | Project 24 | Manual chaos testing | EC2, resilience testing |
 
-## Featured Projects
-
-### Project 17: CloudWatch Log Forwarding
-
-This project uses the Amazon CloudWatch Agent to forward EC2 boot logs to a dedicated CloudWatch log group.
-
-Key outcomes:
-
-- EC2 instance deployed with Terraform
-- CloudWatch Agent configured during instance initialization
-- IAM permissions applied through an instance role
-- Boot logs delivered to a CloudWatch log stream
-- CLI and AWS Console evidence captured
-
-Directory:
-
-```text
-p17-cloudwatch/
