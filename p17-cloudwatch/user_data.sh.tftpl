@@ -1,0 +1,55 @@
+#!/bin/bash
+set -euxo pipefail
+exec > >(tee -a /var/log/cloud-init-output.log) 2>&1
+
+cat > /var/log/p17-boot.log <<BOOTLOG
+P17_BOOT_START
+Project: Project 17 - CloudWatch Log Forwarding
+Hostname: $(hostname)
+Kernel: $(uname -r)
+Boot ID: $(cat /proc/sys/kernel/random/boot_id)
+Boot time: $(uptime -s || true)
+P17_EXPECTED_BOOT_OUTPUT
+BOOTLOG
+
+dnf install -y amazon-cloudwatch-agent
+
+cat > /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json <<'AGENTCFG'
+{
+  "agent": {
+    "region": "${aws_region}",
+    "run_as_user": "root"
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/var/log/p17-boot.log",
+            "log_group_name": "${log_group_name}",
+            "log_stream_name": "{instance_id}-boot-summary",
+            "timezone": "UTC"
+          },
+          {
+            "file_path": "/var/log/cloud-init-output.log",
+            "log_group_name": "${log_group_name}",
+            "log_stream_name": "{instance_id}-cloud-init",
+            "timezone": "UTC"
+          }
+        ]
+      }
+    },
+    "force_flush_interval": 5
+  }
+}
+AGENTCFG
+
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+  -a fetch-config -m ec2 \
+  -c file:/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json \
+  -s
+
+systemctl enable amazon-cloudwatch-agent
+
+echo "CloudWatch agent configured and started" >> /var/log/p17-boot.log
+echo "P17_BOOT_COMPLETE" >> /var/log/p17-boot.log

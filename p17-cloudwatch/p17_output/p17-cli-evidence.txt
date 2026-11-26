@@ -1,0 +1,13 @@
+PROJECT 17 - CLOUDWATCH LOG FORWARDING EVIDENCE
+Generated UTC: 2026-11-25 07:07:25 UTC
+Region: 
+Instance ID: i-0a048795a7861df2b
+Log group: /project17/ec2/boot
+
+=== LOG GROUP ===
+
+=== LOG STREAM ===
+
+=== EXPECTED BOOT OUTPUT ===
+
+=== SECURITY GROUP INBOUND RULES ===

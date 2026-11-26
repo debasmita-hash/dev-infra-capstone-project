@@ -1,0 +1,151 @@
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-0c05f1f6f407d9743",
+            "OwnerId": "590507089733",
+            "RequesterId": "670282523018",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/xvda",
+                            "Ebs": {
+                                "AttachTime": "2026-11-20T23:12:11+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-05408c90d853cd22b",
+                                "EbsCardIndex": 0
+                            }
+                        }
+                    ],
+                    "ClientToken": "fleet-80bf5115-dd04-c485-8eb0-2308c207d256-0",
+                    "EbsOptimized": false,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "IamInstanceProfile": {
+                        "Arn": "arn:aws:iam::590507089733:instance-profile/eks-a2d0fc40-da25-9a71-5647-88b81750fa59",
+                        "Id": "AIPAYS7HXD5CS4CMOZM2P"
+                    },
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "ec2-15-207-103-10.ap-south-1.compute.amazonaws.com",
+                                "PublicIp": "15.207.103.10"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2026-11-20T23:12:10+00:00",
+                                "AttachmentId": "eni-attach-019e00ae84462b76e",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-03d5b877b16c0e556",
+                                    "GroupName": "eks-cluster-sg-devansh-p14-eks-1042712739"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:ff:f5:3e:6c:47",
+                            "NetworkInterfaceId": "eni-0e63f642a653e72e6",
+                            "OwnerId": "590507089733",
+                            "PrivateDnsName": "ip-172-31-25-133.ap-south-1.compute.internal",
+                            "PrivateIpAddress": "172.31.25.133",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "ec2-15-207-103-10.ap-south-1.compute.amazonaws.com",
+                                        "PublicIp": "15.207.103.10"
+                                    },
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-25-133.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.25.133"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-26-44.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.26.44"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-20-219.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.20.219"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-31-7.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.31.7"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-18-34.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.18.34"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-27-241.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.27.241"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-05bb916050c9cedcc",
+                            "VpcId": "vpc-03389c41f719f68ac",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        },
+                        {
+                            "Attachment": {
+                                "AttachTime": "2026-11-20T23:12:42+00:00",
+                                "AttachmentId": "eni-attach-05f442c2a15b642a3",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 1,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "aws-K8S-i-078f69d236516a846",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-03d5b877b16c0e556",
+                                    "GroupName": "eks-cluster-sg-devansh-p14-eks-1042712739"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "06:ff:de:6e:d8:a1",
+                            "NetworkInterfaceId": "eni-0431b9c716460e24e",
+                            "OwnerId": "590507089733",
+                            "PrivateDnsName": "ip-172-31-26-126.ap-south-1.compute.internal",
+                            "PrivateIpAddress": "172.31.26.126",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Primary": true,
+                                    "PrivateDnsName": "ip-172-31-26-126.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.26.126"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-19-13.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.19.13"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-20-72.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.20.72"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-26-102.ap-south-1.compute.internal",
+                                    "PrivateIpAddress": "172.31.26.102"
+                                },
+                                {
+                                    "Primary": false,
+                                    "PrivateDnsName": "ip-172-31-22-20.ap-south-1.compute.internal",
+                                    "Private

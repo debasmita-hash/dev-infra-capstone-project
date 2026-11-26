@@ -1,0 +1,40 @@
+# Terraform generated files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Terraform variable files may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Credentials and keys
+.env
+.env.*
+*.pem
+*.key
+.aws/
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Terraform local/generated files
+**/.terraform/*
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Sensitive variable and credential files
+*.tfvars
+*.tfvars.json
+.env
+.env.*
+*.pem
+*.key

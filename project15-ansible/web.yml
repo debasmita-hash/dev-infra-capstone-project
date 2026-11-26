@@ -1,0 +1,29 @@
+---
+- name: Install and verify the lab web server
+  hosts: web
+  become: true
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+    - name: Publish the application page
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: "Configured by Ansible on {{ inventory_hostname }}"
+        mode: "0644"
+    - name: Start nginx
+      ansible.builtin.service:
+        name: nginx
+        enabled: true
+        state: started
+    - name: Verify the web page
+      ansible.builtin.uri:
+        url: http://127.0.0.1/
+        return_content: true
+      register: page
+    - name: Confirm the page content
+      ansible.builtin.assert:
+        that:
+          - "'Configured by Ansible on ' ~ inventory_hostname in page.content"

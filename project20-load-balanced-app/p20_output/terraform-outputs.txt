@@ -1,0 +1,11 @@
+alb_dns_name = "p20-alb-163243455.ap-south-1.elb.amazonaws.com"
+application_url = "http://p20-alb-163243455.ap-south-1.elb.amazonaws.com"
+instance_ids = [
+  "i-0a02b3f92fe7a8121",
+  "i-09873a7f561ccae31",
+]
+selected_availability_zones = [
+  "ap-south-1a",
+  "ap-south-1b",
+]
+target_group_arn = "arn:aws:elasticloadbalancing:ap-south-1:590507089733:targetgroup/p20tg-6687defb1c2740d323e3ce4139/bfc1b3da9a5dff69"

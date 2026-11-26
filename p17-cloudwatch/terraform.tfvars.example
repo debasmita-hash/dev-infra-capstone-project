@@ -1,0 +1,4 @@
+aws_region         = "ap-south-1"
+instance_type      = "t3.micro"
+log_group_name     = "/project17/ec2/boot"
+log_retention_days = 7
